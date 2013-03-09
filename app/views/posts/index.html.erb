@@ -1,0 +1,18 @@
+<div class='container'>
+  <h1 style='text-align: center'>Newsfeed</h1>
+
+  <% @posts.each do |post| %>
+    <div class='row'>
+        <span class='name span1'><%=link_to post.title, post%></span>
+        <p class='span5'><%= post.body %></p>
+        <div class=''>
+          <p class='span7 pull-right'><%= time_ago_in_words post.created_at%> ago</p>
+        </div>
+    </div>
+  <% end %>
+
+  <br/>
+    <div class='btn btn-large span1 pull-left'>
+      <%= link_to 'New Post', new_post_path %>
+    </div>
+</div>
